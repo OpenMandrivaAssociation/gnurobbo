@@ -1,6 +1,6 @@
 %define name	gnurobbo
 %define version	0.57
-%define release	5mdk
+%define release	%mkrel 6
 
 Summary: GNU Robbo is logic game ported from ATARI XE/XL
 Name:      %{name}
@@ -29,7 +29,7 @@ parts of emergency capsule.
 %prep
 rm -rf $RPM_BUILD_ROOT
 
-%setup
+%setup -q
 
 %build
 %configure2_5x
@@ -38,16 +38,19 @@ rm -rf $RPM_BUILD_ROOT
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
-mkdir -p $RPM_BUILD_ROOT/%{_menudir}
 
-cat << EOF > $RPM_BUILD_ROOT/%{_menudir}/%{name}
-?package(%{name}):\ 
-        needs="x11" \
-        section="More Applications/Games/Arcade" \
-        title="GNU Robbo" \
-        longtitle="Logic game" \
-        command="%{_bindir}/%{name}" \
-        icon="%{name}.png"
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+[Desktop Entry]
+Encoding=UTF-8
+Name=GNU Robbo
+Comment=%{summary}
+Exec=%{_bindir}/%{name}
+Icon=%{name}
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade
 EOF
 
 mkdir -p $RPM_BUILD_ROOT/%{_miconsdir}
@@ -69,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-, root, root)
 %{_bindir}/*
 %{_datadir}/%{name}
-%{_menudir}/*
+%{_datadir}/applications/mandriva-%{name}.desktop
 %defattr(644,root,root,755)
 %doc README COPYING ChangeLog AUTHORS INSTALL
 %{_miconsdir}/%{name}.png
