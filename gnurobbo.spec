@@ -49,7 +49,7 @@ Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade
+Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
 EOF
 
 mkdir -p $RPM_BUILD_ROOT/%{_miconsdir}
