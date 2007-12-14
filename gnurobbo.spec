@@ -1,12 +1,12 @@
 %define name	gnurobbo
 %define version	0.57
-%define release	%mkrel 6
+%define release	%mkrel 7
 
 Summary: GNU Robbo is logic game ported from ATARI XE/XL
 Name:      %{name}
 Version:   %{version}
 Release:   %{release}
-License: GPL
+License: GPLv2+
 Group: Games/Arcade
 Source: http://prdownloads.sourceforge.net/gnurobbo/%{name}-%{version}.tar.bz2
 Source10: %{name}.16.png.bz2
@@ -49,7 +49,7 @@ Icon=%{name}
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
+Categories=Game;ArcadeGame;
 EOF
 
 mkdir -p $RPM_BUILD_ROOT/%{_miconsdir}
@@ -73,7 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %defattr(644,root,root,755)
-%doc README COPYING ChangeLog AUTHORS INSTALL
+%doc README ChangeLog AUTHORS
 %{_miconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_liconsdir}/%{name}.png
