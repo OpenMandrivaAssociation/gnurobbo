@@ -14,7 +14,6 @@ Source11: %{name}.32.png.bz2
 Source12: %{name}.48.png.bz2
 
 URL: http://gnurobbo.sourceforge.net
-BuildRoot: %{_tmppath}/%{name}-buildroot
 
 BuildRequires: libSDL-devel
 BuildRequires: libSDL_ttf-devel
