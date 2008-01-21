@@ -1,6 +1,6 @@
 %define name	gnurobbo
 %define version	0.57
-%define release	%mkrel 7
+%define release	%mkrel 8
 
 Summary: GNU Robbo is logic game ported from ATARI XE/XL
 Name:      %{name}
