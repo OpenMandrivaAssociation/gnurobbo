@@ -1,6 +1,6 @@
 %define name	gnurobbo
 %define version	0.57
-%define release	%mkrel 8
+%define release	%mkrel 9
 
 Summary: GNU Robbo is logic game ported from ATARI XE/XL
 Name:      %{name}
@@ -19,7 +19,7 @@ BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libSDL-devel
 BuildRequires: libSDL_ttf-devel
 Requires: libSDL1.2 >= 1.2.5
-Requires: SDL_ttf >= 2.0.5
+Requires: libSDL_ttf2.0_0 >= 2.0.5
 
 %description
 GNU Robbo is very addictive logic game. You must help
