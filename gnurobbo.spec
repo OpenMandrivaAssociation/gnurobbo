@@ -2,7 +2,7 @@
 %define version	0.57
 %define release	%mkrel 9
 
-Summary: GNU Robbo is logic game ported from ATARI XE/XL
+Summary: Logic game ported from ATARI XE/XL
 Name:      %{name}
 Version:   %{version}
 Release:   %{release}
