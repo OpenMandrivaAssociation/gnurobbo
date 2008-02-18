@@ -1,6 +1,6 @@
 %define name	gnurobbo
 %define version	0.57
-%define release	%mkrel 9
+%define release	%mkrel 10
 
 Summary: Logic game ported from ATARI XE/XL
 Name:      %{name}
