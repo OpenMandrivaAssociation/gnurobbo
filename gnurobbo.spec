@@ -1,6 +1,6 @@
 %define name	gnurobbo
-%define version	0.57
-%define release	%mkrel 13
+%define version	0.61
+%define release	%mkrel 1
 
 Summary: Logic game ported from ATARI XE/XL
 Name:      %{name}
@@ -8,7 +8,7 @@ Version:   %{version}
 Release:   %{release}
 License: GPLv2+
 Group: Games/Arcade
-Source: http://prdownloads.sourceforge.net/gnurobbo/%{name}-%{version}.tar.bz2
+Source: http://prdownloads.sourceforge.net/gnurobbo/%{name}-%{version}.tar.gz
 Source10: %{name}.16.png.bz2
 Source11: %{name}.32.png.bz2
 Source12: %{name}.48.png.bz2
@@ -32,12 +32,13 @@ rm -rf $RPM_BUILD_ROOT
 %setup -q
 
 %build
-%configure2_5x
-%make
+%make PACKAGE_DATA_DIR=%{_datadir}/%{name}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall BINDIR=$RPM_BUILD_ROOT/%{_bindir} \
+PACKAGE_DATA_DIR=$RPM_BUILD_ROOT/%{_datadir}/%{name} \
+DOCDIR=$RPM_BUILD_ROOT/%{_docdir}/%{name}
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
