@@ -19,6 +19,7 @@ BuildRoot: %{_tmppath}/%{name}-buildroot
 BuildRequires: libSDL-devel
 BuildRequires: libSDL_ttf-devel
 BuildRequires: libSDL_image-devel
+BuildRequires: libSDL_mixer-devel
 #Requires: libSDL1.2 >= 1.2.5
 #Requires: libSDL_ttf2.0_0 >= 2.0.5
 
