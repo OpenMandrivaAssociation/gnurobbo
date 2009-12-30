@@ -1,5 +1,5 @@
 %define name	gnurobbo
-%define version	0.62
+%define version	0.65
 %define release	%mkrel 1
 
 Summary: Logic game ported from ATARI XE/XL
@@ -8,7 +8,7 @@ Version:   %{version}
 Release:   %{release}
 License: GPLv2+
 Group: Games/Arcade
-Source: http://prdownloads.sourceforge.net/gnurobbo/%{name}-%{version}.tar.gz
+Source: http://prdownloads.sourceforge.net/gnurobbo/%{name}-%{version}-source.tar.gz
 Source10: %{name}.16.png.bz2
 Source11: %{name}.32.png.bz2
 Source12: %{name}.48.png.bz2
@@ -18,6 +18,7 @@ BuildRoot: %{_tmppath}/%{name}-buildroot
 
 BuildRequires: libSDL-devel
 BuildRequires: libSDL_ttf-devel
+BuildRequires: libSDL_image-devel
 #Requires: libSDL1.2 >= 1.2.5
 #Requires: libSDL_ttf2.0_0 >= 2.0.5
 
