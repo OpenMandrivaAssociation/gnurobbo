@@ -1,25 +1,21 @@
-%define name	gnurobbo
-%define version	0.65
-%define release	%mkrel 1
+Summary:	Logic game ported from ATARI XE/XL
+Name:		gnurobbo
+Version:	0.66
+Release:	%mkrel 1
+License:	GPLv2+
+Group:		Games/Arcade
+Source:		http://prdownloads.sourceforge.net/gnurobbo/%{name}-%{version}-source.tar.gz
+Source10:	%{name}.16.png.bz2
+Source11:	%{name}.32.png.bz2
+Source12:	%{name}.48.png.bz2
 
-Summary: Logic game ported from ATARI XE/XL
-Name:      %{name}
-Version:   %{version}
-Release:   %{release}
-License: GPLv2+
-Group: Games/Arcade
-Source: http://prdownloads.sourceforge.net/gnurobbo/%{name}-%{version}-source.tar.gz
-Source10: %{name}.16.png.bz2
-Source11: %{name}.32.png.bz2
-Source12: %{name}.48.png.bz2
+URL:		http://gnurobbo.sourceforge.net
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
-URL: http://gnurobbo.sourceforge.net
-BuildRoot: %{_tmppath}/%{name}-buildroot
-
-BuildRequires: libSDL-devel
-BuildRequires: libSDL_ttf-devel
-BuildRequires: libSDL_image-devel
-BuildRequires: libSDL_mixer-devel
+BuildRequires:	libSDL-devel
+BuildRequires:	libSDL_ttf-devel
+BuildRequires:	libSDL_image-devel
+BuildRequires:	libSDL_mixer-devel
 #Requires: libSDL1.2 >= 1.2.5
 #Requires: libSDL_ttf2.0_0 >= 2.0.5
 
@@ -29,15 +25,13 @@ little robot to get out of unfriendly planet, collecting
 parts of emergency capsule.
 
 %prep
-rm -rf $RPM_BUILD_ROOT
-
 %setup -q
 
 %build
 %make PACKAGE_DATA_DIR=%{_datadir}/%{name}
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %buildroot 
 %makeinstall BINDIR=$RPM_BUILD_ROOT/%{_bindir} \
 PACKAGE_DATA_DIR=$RPM_BUILD_ROOT/%{_datadir}/%{name} \
 DOCDIR=$RPM_BUILD_ROOT/%{_docdir}/%{name}
@@ -61,18 +55,8 @@ bzcat %{SOURCE10} > $RPM_BUILD_ROOT%{_miconsdir}/%{name}.png
 bzcat %{SOURCE11} > $RPM_BUILD_ROOT%{_iconsdir}/%{name}.png
 bzcat %{SOURCE12} > $RPM_BUILD_ROOT%{_liconsdir}/%{name}.png
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%endif
-
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %buildroot
 
 %files
 %defattr(-, root, root)
