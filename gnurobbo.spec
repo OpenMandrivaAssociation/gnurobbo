@@ -1,7 +1,7 @@
 Summary:	Logic game ported from ATARI XE/XL
 Name:		gnurobbo
 Version:	0.66
-Release:	2
+Release:	3
 License:	GPLv2+
 Group:		Games/Arcade
 Url:		http://gnurobbo.sourceforge.net
