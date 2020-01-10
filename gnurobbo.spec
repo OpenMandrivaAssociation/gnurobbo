@@ -32,7 +32,7 @@ of unfriendly planet, collecting parts of emergency capsule.
 
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %make PACKAGE_DATA_DIR=%{_datadir}/%{name}
