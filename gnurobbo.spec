@@ -4,7 +4,7 @@ Version:	0.68
 Release:	1
 License:	GPLv2+
 Group:		Games/Arcade
-Url:		http://gnurobbo.sourceforge.net
+Url:		https://gnurobbo.sourceforge.net
 Source0:	https://downloads.sourceforge.net/project/gnurobbo/gnurobbo/gnurobbo%20%{version}/gnurobbo-%{version}-source.tar.gz
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_image)
